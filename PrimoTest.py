@@ -1,15 +1,11 @@
 import random as r
+import Costants as c
+import Functions as f
+from matplotlib import pyplot as plt
 
-iterNum = 1000
-minimo = 1
-massimo = 0
+len = 1024
 
-for i in range(0, iterNum):
-    n = r.random()
-    if n > massimo:
-        massimo = n
-    if n < minimo:
-        minimo = n
+weightList = f.weight_builder(len, c.m1, c.q1, c.m2, c.q2)
 
-print("Il minimo è: " + str(minimo))
-print("Il massimo è: " + str(massimo))
+plt.plot(weightList)
+plt.show()  # Shows the plot of the distribution created
